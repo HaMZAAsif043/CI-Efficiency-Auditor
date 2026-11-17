@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-11-17T06:09:08.327Z",
+  "repository": "cli/cli",
+  "apiVersion": "2026-03-10",
+  "authentication": "anonymous",
+  "snapshotComplete": false,
+  "collectionRequests": 4,
+  "independentVerificationRequests": 2,
+  "checks": [
+    {
+      "method": "GET",
+      "resource": "/repos/cli/cli/actions/runs/44026034754/attempts/1",
+      "status": 200,
+      "runId": 44026034754,
+      "attempt": 1,
+      "commitMatches": true,
+      "identityMatches": true
+    },
+    {
+      "method": "GET",
+      "resource": "/repos/cli/cli/actions/runs/44026034754/attempts/1/jobs?per_page=100",
+      "status": 200,
+      "jobId": 133846479915,
+      "runId": 44026034754,
+      "attempt": 1,
+      "identityMatches": true
+    }
+  ]
+}

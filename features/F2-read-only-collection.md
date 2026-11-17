@@ -1,6 +1,6 @@
 # F2 - Read-only collection
 
-Status: in_progress. Dependencies: F1 (verified). Completion evidence: pending; [work item](../work-items/F2-read-only-collection.md).
+Status: ready_for_review. Dependencies: F1 (verified). Completion evidence: [verified F2 record](../evidence/F2/VERIFICATION.md); [work item](../work-items/F2-read-only-collection.md).
 
 ## Outcome and scope
 
@@ -8,13 +8,13 @@ Collect a bounded window of one repository's runs, attempts, jobs and steps into
 
 ## Acceptance criteria
 
-- [ ] F2-A1: Multi-page fixture collection includes each expected run/job exactly once, filters `[from,to)` correctly and preserves attempt/job identities.
-- [ ] F2-A2: Failed jobs followed by a partial rerun retain both observed executions without claiming unaffected jobs ran again.
-- [ ] F2-A3: Request/run/provider caps, missing attempts, rate limiting, 403/404 and interrupted collection yield explicit coverage reasons and correct exits; invalid credentials do not leak into output.
-- [ ] F2-A4: Unknown schema versions, invalid dates/repository arguments, malformed responses and unwritable paths fail clearly; writes do not corrupt an existing valid snapshot.
-- [ ] F2-A5: Cache reuse respects repository/window/schema/attempt identity and refreshes changed run status or new attempts; tests demonstrate no stale-complete output.
-- [ ] F2-A6: One real public or permissioned repository smoke run produces a schema-valid snapshot with evidence that API-provided run/attempt/job identities match. Record counts, window, API version, request count and completeness.
-- [ ] F2-A7: Snapshot and diagnostics contain only allowed fields; inspected outputs contain no tokens, logs, environment or source. Demonstrate zero mutation requests.
+- [x] F2-A1: Multi-page fixture collection includes each expected run/job exactly once, filters `[from,to)` correctly and preserves attempt/job identities.
+- [x] F2-A2: Failed jobs followed by a partial rerun retain both observed executions without claiming unaffected jobs ran again.
+- [x] F2-A3: Request/run/provider caps, missing attempts, rate limiting, 403/404 and interrupted collection yield explicit coverage reasons and correct exits; invalid credentials do not leak into output.
+- [x] F2-A4: Unknown schema versions, invalid dates/repository arguments, malformed responses and unwritable paths fail clearly; writes do not corrupt an existing valid snapshot.
+- [x] F2-A5: Cache reuse respects repository/window/schema/attempt identity and refreshes changed run status or new attempts; tests demonstrate no stale-complete output.
+- [x] F2-A6: One real public or permissioned repository smoke run produces a schema-valid snapshot with evidence that API-provided run/attempt/job identities match. Record counts, window, API version, request count and completeness.
+- [x] F2-A7: Snapshot and diagnostics contain only allowed fields; inspected outputs contain no tokens, logs, environment or source. Demonstrate zero mutation requests.
 
 ## Proof
 

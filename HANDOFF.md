@@ -2,24 +2,26 @@
 
 Updated: 2026-11-17 (Asia/Karachi).
 
-## Active request
+## Completed authorized work
 
-F1 is complete. The user requested continuation during its evidence handoff; proceed with F2 after committing these records.
+F1 CLI foundation and F2 read-only collection are verified and ready for local review. Current branch: feat/read-only-collection, stacked on F1 base 58fc39260867102a4463640743e51e5aebccd674. F2 source revision: a4c63bb744201b6181ce41b70aee1b29c96563b4. Evidence/status documentation follows in its own commit.
 
-## Observed state
+- [F1 proof](./evidence/F1/VERIFICATION.md): 14 tests and original packed-executable verification.
+- [F2 proof](./evidence/F2/VERIFICATION.md): typecheck/build, 35 passing tests, final 14-file packed installation and installed-command checks.
+- Final anonymous public collection: 1 run, 1 attempt, 1 job, 6 requests including retries. Exit 3 correctly marks partial coverage from the one-run cap. Two independent GETs confirmed run/attempt/commit/job identities.
+- Actual CLI docs: [docs/CLI.md](./docs/CLI.md). Analysis/report/compare are not implemented.
+- Source is committed. Generated packages/dependencies/cache stay ignored; small public/synthetic evidence is committed separately.
 
-- Independent repository. Local main: initial planning commit 312d01309ca374abc05ddb1514c88e4e7588efd9.
-- Task branch: feat/cli-foundation. Verified application revision: 105ffb4377591cae6046e946ec0795b5031a4de3.
-- F1 is verified and ready for review: [actual evidence](./evidence/F1/VERIFICATION.md).
-- Node.js 24.21.0/npm 11.19.0; clean install, typecheck/build, 14 CLI tests and packed-install/shim checks passed on Windows.
-- A repeated sandbox offline install timed out; an approved retry passed with the same package hash. Evidence preserves the failure and limitations.
-- No remote, push, actual PR, merge, public package or deployment. [Prepared PR text](./work-items/F1-PR.md) is local only.
-- No Linux/macOS verification, GitHub collection or customer validation. MarkItDown applications were not edited.
+## Limits and publication
 
-## Next action
+No remote, push, actual PR, merge, package publication or deployment exists. [F2 PR text](./work-items/F2-PR.md) is prepared. Local main remains the initial planning commit; features are on stacked task branches.
 
-Commit F1 evidence/status documents, inspect the clean tree, then create feat/read-only-collection from the completed F1 revision. It is a stacked local branch because no remote/default-branch integration exists. Record its exact base in the F2 work item.
+Windows was verified; Linux/macOS, private repository authentication, customer validation and savings remain unverified. One earlier CLI startup test timed out; collector imports were deferred and all 35 tests then passed. Runtime replacement interrupted an earlier package execution; the final rehearsal succeeded. Preserve failed artifacts and their context.
 
-Read [F2](./features/F2-read-only-collection.md), ARCHITECTURE and VERIFICATION. Implement bounded read-only collection, validated snapshots, explicit coverage, safe caching/output and actual verification. An anonymous public repository can supply the live smoke check; do not inspect stored credentials to discover whether they exist.
+After the environment account changed, Git required a per-command safe.directory exception scoped to D:/dev/personal/experiment/ci-efficiency-auditor. Ownership was inspected; do not disable ownership checks globally. Verify current state each time.
 
-Use [AGENTS.md](./AGENTS.md) and [VERIFICATION.md](./VERIFICATION.md); preserve prior evidence and distinguish source revisions, engineering proof, publication and customer validation.
+## Exact next action
+
+Read [F3](./features/F3-evidence-backed-analysis.md), ARCHITECTURE and VERIFICATION. For the next requested implementation task, inspect the clean tree and create feat/evidence-backed-analysis from this completed branch, recording its exact base. Implement independent metric calculations and proof without claiming retry time is avoidable waste or confirmed test flakiness.
+
+[AGENTS.md](./AGENTS.md) and the [roadmap](./ROADMAP.md) remain the entry points. Neighboring MarkItDown projects were not edited.

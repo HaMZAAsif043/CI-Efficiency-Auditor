@@ -1,0 +1,105 @@
+{
+  "files": [
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "dist/cli/collect-command.js",
+    "dist/cli/main.js",
+    "dist/cli/program.js",
+    "dist/github/api.js",
+    "dist/github/collect.js",
+    "dist/github/normalize.js",
+    "dist/snapshot/cache.js",
+    "dist/snapshot/io.js",
+    "dist/snapshot/schema.js",
+    "docs/CLI.md",
+    "package.json"
+  ],
+  "sha256": "95731e59ad272651ddf1551314cadf20aa37dcd71bbc5537b7744f1dbfc5970a",
+  "packInfo": [
+    {
+      "id": "@hamzaasif043/ci-efficiency-auditor@0.1.0",
+      "name": "@hamzaasif043/ci-efficiency-auditor",
+      "version": "0.1.0",
+      "size": 15751,
+      "unpackedSize": 50842,
+      "shasum": "930d62be285b43941e0cb3c3cb80faa7dbe17422",
+      "integrity": "sha512-4jSEv9zHPPNJl9oJ6rj66MeiyfZtZHmX5eHtI0Watx6F+FuSwdZ/vo1xdDS+ZScOGaoWs7f897uiWEYmOrOleg==",
+      "filename": "hamzaasif043-ci-efficiency-auditor-0.1.0.tgz",
+      "files": [
+        {
+          "path": "LICENSE",
+          "size": 11358,
+          "mode": 420
+        },
+        {
+          "path": "NOTICE",
+          "size": 129,
+          "mode": 420
+        },
+        {
+          "path": "README.md",
+          "size": 4468,
+          "mode": 420
+        },
+        {
+          "path": "dist/cli/collect-command.js",
+          "size": 3155,
+          "mode": 420
+        },
+        {
+          "path": "dist/cli/main.js",
+          "size": 703,
+          "mode": 420
+        },
+        {
+          "path": "dist/cli/program.js",
+          "size": 2722,
+          "mode": 420
+        },
+        {
+          "path": "dist/github/api.js",
+          "size": 1129,
+          "mode": 420
+        },
+        {
+          "path": "dist/github/collect.js",
+          "size": 14513,
+          "mode": 420
+        },
+        {
+          "path": "dist/github/normalize.js",
+          "size": 2699,
+          "mode": 420
+        },
+        {
+          "path": "dist/snapshot/cache.js",
+          "size": 1389,
+          "mode": 420
+        },
+        {
+          "path": "dist/snapshot/io.js",
+          "size": 1050,
+          "mode": 420
+        },
+        {
+          "path": "dist/snapshot/schema.js",
+          "size": 3143,
+          "mode": 420
+        },
+        {
+          "path": "docs/CLI.md",
+          "size": 3465,
+          "mode": 420
+        },
+        {
+          "path": "package.json",
+          "size": 919,
+          "mode": 420
+        }
+      ],
+      "entryCount": 14,
+      "bundled": []
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+﻿{
+    "command":  "node dist/cli/main.js collect --repo cli/cli --days 7 --max-runs 1 --max-requests 8 --out evidence/F2/public-cli-smoke.json --no-cache --anonymous",
+    "exitCode":  3,
+    "revision":  "a4c63bb744201b6181ce41b70aee1b29c96563b4"
+}

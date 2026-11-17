@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "collectorVersion": "0.1.0",
+  "collectedAt": "2026-11-17T02:16:42.235Z",
+  "repository": "tj/commander.js",
+  "apiVersion": "2026-03-10",
+  "window": {
+    "from": "2026-10-18T02:16:35.474Z",
+    "to": "2026-11-17T02:16:35.474Z"
+  },
+  "coverage": {
+    "complete": false,
+    "reasons": [
+      "run_limit"
+    ],
+    "requestCount": 7,
+    "maxRequests": 15,
+    "maxRuns": 2,
+    "returnedRunCount": 2,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "oldestEntryAt": null
+    }
+  },
+  "runs": [
+    {
+      "id": 43989827353,
+      "workflowId": 15754,
+      "name": "build",
+      "sha": "eb06f69f8cab8f587279964f5ffe629dd7f57ee1",
+      "branch": "docs/fix-typos-in-readme-and-tests",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "failure",
+      "createdAt": "2026-11-17T00:42:46Z",
+      "startedAt": "2026-11-17T00:42:46Z",
+      "updatedAt": "2026-11-17T01:00:37Z",
+      "attempt": 1,
+      "url": "https://github.com/tj/commander.js/actions/runs/43989827353"
+    },
+    {
+      "id": 43989827426,
+      "workflowId": 22075987,
+      "name": "CodeQL",
+      "sha": "eb06f69f8cab8f587279964f5ffe629dd7f57ee1",
+      "branch": "docs/fix-typos-in-readme-and-tests",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "failure",
+      "createdAt": "2026-11-17T00:42:46Z",
+      "startedAt": "2026-11-17T00:42:46Z",
+      "updatedAt": "2026-11-17T01:00:37Z",
+      "attempt": 1,
+      "url": "https://github.com/tj/commander.js/actions/runs/43989827426"
+    }
+  ],
+  "attempts": [
+    {
+      "runId": 43989827353,
+      "number": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "startedAt": "2026-11-17T00:42:46Z",
+      "updatedAt": "2026-11-17T01:00:37Z"
+    },
+    {
+      "runId": 43989827426,
+      "number": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "startedAt": "2026-11-17T00:42:46Z",
+      "updatedAt": "2026-11-17T01:00:37Z"
+    }
+  ],
+  "jobs": [],
+  "diagnostics": [
+    {
+      "code": "run_limit",
+      "severity": "incomplete"
+    },
+    {
+      "code": "run_limit",
+      "severity": "incomplete"
+    }
+  ]
+}
