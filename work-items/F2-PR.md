@@ -4,4 +4,6 @@ Developers can now collect runs, attempt outcomes, jobs and step timings using r
 
 Validation: typecheck/build, 35 passing tests, offline packed installation and installed-command checks, plus an anonymous public collection independently checked against GitHub. The public snapshot is deliberately partial under a one-run cap (exit 3). Windows was checked; private repositories and other OSes remain unverified. See [actual evidence](../evidence/F2/VERIFICATION.md).
 
+An additional complete narrow-window public collection passed with 1 run, 1 attempt, 1 job, 6 steps and 4 requests (exit 0); two independent GETs matched its identities. Regression tests also demonstrate the previously failing missing-attempt and unfinished-attempt cases.
+
 This branch is stacked on local F1 because no remote exists. This is prepared PR text only; no actual PR or package release exists. Reporting and analysis remain future features.

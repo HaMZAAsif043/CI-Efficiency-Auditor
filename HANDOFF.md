@@ -8,7 +8,7 @@ F1 CLI foundation and F2 read-only collection are verified and ready for local r
 
 - [F1 proof](./evidence/F1/VERIFICATION.md): 14 tests and original packed-executable verification.
 - [F2 proof](./evidence/F2/VERIFICATION.md): typecheck/build, 35 passing tests, final 14-file packed installation and installed-command checks.
-- Final anonymous public collection: 1 run, 1 attempt, 1 job, 6 requests including retries. Exit 3 correctly marks partial coverage from the one-run cap. Two independent GETs confirmed run/attempt/commit/job identities.
+- Final narrow-window anonymous public collection: 1 run, 1 attempt, 1 job, 6 steps, 4 requests; complete coverage and exit 0. Two independent GETs confirmed run/attempt/commit/job identities. An additional one-run-capped collection correctly exits 3 with partial coverage.
 - Actual CLI docs: [docs/CLI.md](./docs/CLI.md). Analysis/report/compare are not implemented.
 - Source is committed. Generated packages/dependencies/cache stay ignored; small public/synthetic evidence is committed separately.
 
