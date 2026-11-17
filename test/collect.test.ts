@@ -160,6 +160,27 @@ describe('collection correctness and bounded requests', () => {
       ? response({ total_count: 1, workflow_runs: [] }) : undefined));
     expect(missingRuns.coverage.reasons).toContain('malformed_response');
   });
+
+  test('an unfinished attempt cannot produce a complete snapshot even without jobs', async () => {
+    const result = await collect(options, fixtureApi(({ path }) => {
+      if (path.endsWith('/attempts/1')) return response(rawRun(10, 1, { status: 'in_progress', conclusion: null }));
+      if (path.endsWith('/jobs')) return response({ total_count: 0, jobs: [] });
+      return undefined;
+    }));
+    expect(result.coverage.complete).toBe(false);
+    expect(result.coverage.reasons).toContain('in_progress');
+  });
+
+  test('missing job attempt identity never invents an execution during a partial rerun', async () => {
+    const result = await collect(options, fixtureApi(({ path }) => {
+      if (path.endsWith('/runs')) return response({ total_count: 1, workflow_runs: [rawRun(10, 2)] });
+      if (path.endsWith('/jobs')) return response({ total_count: 1, jobs: [rawJob(100, 10, 1, { run_attempt: undefined })] });
+      return response(rawRun(10, path.endsWith('/attempts/1') ? 1 : 2));
+    }));
+    expect(result.coverage.complete).toBe(false);
+    expect(result.coverage.reasons).toContain('missing_job_attempt');
+    expect(result.jobs).toEqual([]);
+  });
 });
 
 describe('cache identity, safe snapshots and output', () => {

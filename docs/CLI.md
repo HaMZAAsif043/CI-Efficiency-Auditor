@@ -28,6 +28,8 @@ Requests are serial, timeout after 15 seconds, and retry at most twice. GitHub r
 
 Cache identity includes schema version, repository, exact window, run/commit, observed attempt count, run update time and requested attempt. The run list is refreshed every time. In-progress data is not cached. Cache corruption falls back to the API with a warning; final run refreshes detect observed mid-collection changes. Collection is not an atomic view of GitHub's state.
 
+Jobs without a provider-supplied attempt number are excluded with `missing_job_attempt` incomplete coverage; attributing them to the requested attempt could invent executions during partial reruns. An unfinished attempt also makes coverage incomplete, even when its jobs list is empty.
+
 Exit codes: 0 for complete collection/help/version; 3 for a written partial snapshot; 2 for invalid options, inaccessible initial repository or invalid credentials; 1 for unexpected/output failures. Invalid API data yields explicit incomplete diagnostics rather than invented zero durations. Ctrl+C stops further requests and attempts to write a partial snapshot; forced process termination cannot guarantee an output file.
 
 `report` and `compare` remain unavailable (exit 2). Schema v1 is enforced by the snapshot reader/writer; unknown versions are rejected. Errors do not dump tokens or raw API response bodies. Snapshot and cache metadata can still be private. Restrictive creation modes are requested; Windows ACLs are environment-dependent.

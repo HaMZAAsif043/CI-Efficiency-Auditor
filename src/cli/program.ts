@@ -1,5 +1,4 @@
 import { Command, CommanderError } from 'commander';
-import { runCollection } from './collect-command.js';
 
 export function createProgram(version: string, onResult: (code: number) => void = () => undefined): Command {
   const program = new Command();
@@ -22,7 +21,10 @@ export function createProgram(version: string, onResult: (code: number) => void 
     .option('--cache-dir <path>', 'Completed-attempt cache directory', '.cache/ci-audit')
     .option('--no-cache', 'Disable cache reads and writes')
     .option('--anonymous', 'Ignore GITHUB_TOKEN and use public anonymous access')
-    .action(async (options: unknown) => onResult(await runCollection(options, version)));
+    .action(async (options: unknown) => {
+      const { runCollection } = await import('./collect-command.js');
+      onResult(await runCollection(options, version));
+    });
 
   for (const name of ['report', 'compare']) {
     program

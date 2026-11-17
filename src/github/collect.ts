@@ -141,6 +141,7 @@ export async function collect(input: CollectionOptions, api: ReadOnlyApi, contro
         if (rawAttempt.id !== run.id || rawAttempt.run_attempt !== number || rawAttempt.head_sha !== run.sha) throw new CollectionFailure('run_changed');
         const normalized = normalizeAttempt(rawAttempt);
         attempts.set(`${run.id}:${number}`, normalized);
+        if (normalized.status !== 'completed') diagnose('in_progress', run.id, number);
         const attemptJobs = new Map<string, Job>();
         const rawJobIds = new Set<string>();
         const before = diagnostics.filter((value) => value.severity === 'incomplete').length;
@@ -149,6 +150,9 @@ export async function collect(input: CollectionOptions, api: ReadOnlyApi, contro
           const data = jobPageSchema.parse(response.data);
           for (const value of data.jobs) {
             rawJobIds.add(`${value.id}:${value.run_attempt ?? number}`);
+            // Partial reruns may include inherited jobs. Without the provider's
+            // attempt identity, assigning the requested attempt invents an execution.
+            if (value.run_attempt === undefined) { diagnose('missing_job_attempt', run.id, number); continue; }
             if (value.steps === undefined) diagnose('missing_steps', run.id, number);
             const job = normalizeJob(value, options.repository, number);
             if (job.runId !== run.id || job.attempt > number) { diagnose('job_identity_mismatch', run.id, number); continue; }

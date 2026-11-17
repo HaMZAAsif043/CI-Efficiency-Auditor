@@ -31,7 +31,7 @@ export const diagnosticCodes = [
   'run_limit', 'request_limit', 'provider_search_cap', 'http_401', 'http_403', 'http_404',
   'rate_limit', 'retry_wait_exceeds_limit', 'transport_error', 'server_error', 'malformed_response',
   'cache_unavailable', 'cache_invalid', 'in_progress', 'missing_timestamps', 'collection_interrupted',
-  'run_changed', 'job_identity_mismatch', 'inherited_job_ignored', 'missing_attempt', 'missing_steps',
+  'run_changed', 'job_identity_mismatch', 'inherited_job_ignored', 'missing_attempt', 'missing_steps', 'missing_job_attempt',
 ] as const;
 export const diagnosticSchema = z.object({
   code: z.enum(diagnosticCodes), severity: z.enum(['warning', 'incomplete']),
