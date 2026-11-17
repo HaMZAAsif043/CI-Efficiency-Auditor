@@ -1,6 +1,6 @@
 # F1 - CLI foundation
 
-Status: in_progress
+Status: ready_for_review
 Feature card: [F1](../features/F1-cli-foundation.md)
 Started: 2026-11-17 (Asia/Karachi)
 Repository: this project folder; branch `feat/cli-foundation`.
@@ -28,4 +28,6 @@ No GitHub data collection, analysis, report generation, package publication or c
 
 ## Verification and handoff
 
-Pending actual checks. Record results before marking verified.
+Verified implementation: `105ffb4377591cae6046e946ec0795b5031a4de3`. Clean install, typecheck/build, 14 process tests and the packed executable rehearsal passed. See [actual criterion evidence](../evidence/F1/VERIFICATION.md), including the failed sandbox repeat and successful approved retry.
+
+No remote exists; [PR text](./F1-PR.md) is prepared. No push, real PR, merge or release. Customer validation is untested. The user subsequently requested continuation, authorizing F2 after this evidence handoff.

@@ -1,35 +1,25 @@
-# Current handoff
+﻿# Current handoff
 
-Updated: 2026-11-16 (Asia/Karachi).
+Updated: 2026-11-17 (Asia/Karachi).
 
-## Objective
+## Active request
 
-Prepare an agent-ready, proof-driven plan for the open-source CI Efficiency Auditor and its initial side-income experiments.
+F1 is complete. The user requested continuation during its evidence handoff; proceed with F2 after committing these records.
 
-## Current state
+## Observed state
 
-- Planning documents, feature cards, and reusable templates have been created locally.
-- No application source, dependencies, independent Git repository, remote, commits, PRs, package, or deployment have been created for this project.
-- All feature cards are `planned`; there is no feature-completion evidence yet.
-- No customer interviews, real repository collection, paid audits, measured improvements, or recurring customers have been recorded.
-- Existing MarkItDown projects are outside this project's scope and were not edited.
-- Documentation link/card verification passed; see [the actual check record](./evidence/planning-2026-11-16.md). Reusable prompts and a documentation checker are available in [AGENT-PROMPTS.md](./AGENT-PROMPTS.md).
+- Independent repository. Local main: initial planning commit 312d01309ca374abc05ddb1514c88e4e7588efd9.
+- Task branch: feat/cli-foundation. Verified application revision: 105ffb4377591cae6046e946ec0795b5031a4de3.
+- F1 is verified and ready for review: [actual evidence](./evidence/F1/VERIFICATION.md).
+- Node.js 24.21.0/npm 11.19.0; clean install, typecheck/build, 14 CLI tests and packed-install/shim checks passed on Windows.
+- A repeated sandbox offline install timed out; an approved retry passed with the same package hash. Evidence preserves the failure and limitations.
+- No remote, push, actual PR, merge, public package or deployment. [Prepared PR text](./work-items/F1-PR.md) is local only.
+- No Linux/macOS verification, GitHub collection or customer validation. MarkItDown applications were not edited.
 
 ## Next action
 
-If asked to start implementation, begin [F1 bootstrap](./features/F1-cli-foundation.md), then F2 collection. A reasonable task request is: "Implement F1, verify its acceptance criteria, and leave the evidence and handoff."
+Commit F1 evidence/status documents, inspect the clean tree, then create feat/read-only-collection from the completed F1 revision. It is a stacked local branch because no remote/default-branch integration exists. Record its exact base in the F2 work item.
 
-For market validation, begin [F0](./features/F0-demand-validation.md) using [VALIDATION.md](./VALIDATION.md). Drafting outreach is local work; actually contacting people requires explicit outreach authorization. If contacts/data are unavailable, record the gap and continue authorized independent engineering.
+Read [F2](./features/F2-read-only-collection.md), ARCHITECTURE and VERIFICATION. Implement bounded read-only collection, validated snapshots, explicit coverage, safe caching/output and actual verification. An anonymous public repository can supply the live smoke check; do not inspect stored credentials to discover whether they exist.
 
-## Decisions already made
-
-- CLI first; TypeScript/Node.js, npm distribution, Octokit, Commander, Zod, Vitest.
-- Intended public license: Apache-2.0; add actual license/ownership details during repository setup.
-- One repository per collection, bounded lookback, local snapshots and reports, read-only access.
-- Two initial finding families: additional-attempt runner time and recurring setup-step duration.
-- Dollars, test-level flakiness, automatic fixes, SaaS, multiple CI providers, and agent wrappers are outside the MVP.
-- Paid audits and implementation precede a hosted subscription experiment.
-
-## Before continuing
-
-Recheck actual disk/Git state. These observations describe this planning turn and can become stale. Use [VERIFICATION.md](./VERIFICATION.md) to record subsequent proof and update this handoff after each meaningful milestone.
+Use [AGENTS.md](./AGENTS.md) and [VERIFICATION.md](./VERIFICATION.md); preserve prior evidence and distinguish source revisions, engineering proof, publication and customer validation.

@@ -2,7 +2,7 @@
 
 Implement in dependency order from [ROADMAP.md](../ROADMAP.md). Each acceptance criterion has a stable ID so work items and evidence can reference it precisely.
 
-Every card starts `planned`, with unchecked criteria and no completion evidence. Update only after actual work. If scope changes, record the decision and revised criteria before marking completion; do not quietly remove a failing criterion.
+Cards initially start `planned`, with unchecked criteria and no completion evidence. Current status is recorded in the roadmap and each card. Update only after actual work. If scope changes, record the decision and revised criteria before marking completion; do not quietly remove a failing criterion.
 
 - [F0: demand validation](./F0-demand-validation.md)
 - [F1: CLI foundation](./F1-cli-foundation.md)

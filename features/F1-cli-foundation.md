@@ -1,6 +1,6 @@
 # F1 - CLI foundation
 
-Status: in_progress. Dependencies: none. Completion evidence: pending; see [work item](../work-items/F1-cli-foundation.md).
+Status: ready_for_review. Dependencies: none. Completion evidence: [verified F1 record](../evidence/F1/VERIFICATION.md); [work item](../work-items/F1-cli-foundation.md).
 
 ## Outcome and scope
 
@@ -10,11 +10,11 @@ Choose and lock supported Node.js/dependency versions. Configure TypeScript, Oct
 
 ## Acceptance criteria
 
-- [ ] F1-A1: Clean dependency install, typecheck, build and meaningful CLI argument/error tests pass using the committed lockfile.
-- [ ] F1-A2: Built CLI `--help` and `--version` exit 0 and accurately describe available behavior.
-- [ ] F1-A3: Unknown commands/invalid flags exit 2 with an actionable message; unimplemented commands cannot report success.
-- [ ] F1-A4: `npm pack` produces a package whose executable runs in a clean temporary directory; inspect package contents for secrets, private metadata and unrelated files.
-- [ ] F1-A5: README documents actual runtime, scripts, command state and setup; manifest/license metadata agree.
+- [x] F1-A1: Clean dependency install, typecheck, build and meaningful CLI argument/error tests pass using the committed lockfile.
+- [x] F1-A2: Built CLI `--help` and `--version` exit 0 and accurately describe available behavior.
+- [x] F1-A3: Unknown commands/invalid flags exit 2 with an actionable message; unimplemented commands cannot report success.
+- [x] F1-A4: `npm pack` produces a package whose executable runs in a clean temporary directory; inspect package contents for secrets, private metadata and unrelated files.
+- [x] F1-A5: README documents actual runtime, scripts, command state and setup; manifest/license metadata agree.
 
 ## Proof
 

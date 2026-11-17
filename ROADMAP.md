@@ -5,7 +5,7 @@ All statuses below describe engineering/research work, not publication or revenu
 | ID | Deliverable | Depends on | Status | Completion evidence |
 |---|---|---|---|---|
 | [F0](./features/F0-demand-validation.md) | Demand and buyer validation | People/data access | planned | None |
-| [F1](./features/F1-cli-foundation.md) | Runnable CLI foundation | None | in_progress | [Work item](./work-items/F1-cli-foundation.md) |
+| [F1](./features/F1-cli-foundation.md) | Runnable CLI foundation | None | ready_for_review | [Verified evidence](./evidence/F1/VERIFICATION.md) |
 | [F2](./features/F2-read-only-collection.md) | Bounded collection and snapshots | F1 | planned | None |
 | [F3](./features/F3-evidence-backed-analysis.md) | Correct, explainable findings | F2 schema | planned | None |
 | [F4](./features/F4-local-reports.md) | Useful local reports | F3 | planned | None |

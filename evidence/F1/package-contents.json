@@ -1,0 +1,63 @@
+{
+  "files": [
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "dist/cli/main.js",
+    "dist/cli/program.js",
+    "docs/CLI.md",
+    "package.json"
+  ],
+  "sha256": "895387e477887e50fc92895e0a14824431a605f78053f15b728a8ae3d31e71a7",
+  "packInfo": [
+    {
+      "id": "@hamzaasif043/ci-efficiency-auditor@0.1.0",
+      "name": "@hamzaasif043/ci-efficiency-auditor",
+      "version": "0.1.0",
+      "size": 7347,
+      "unpackedSize": 18925,
+      "shasum": "401c2775c6cad3380a4bbdf42694f3971124f61f",
+      "integrity": "sha512-7JW4lzeKZ8G+zKdxaIxkw4Trj1HU/RnzcX1AWzX0AHZssWw+Dsv1/XZkjsm4xE9aP4drT3FRvo5PoHC/EZLQ3w==",
+      "filename": "hamzaasif043-ci-efficiency-auditor-0.1.0.tgz",
+      "files": [
+        {
+          "path": "LICENSE",
+          "size": 11358,
+          "mode": 420
+        },
+        {
+          "path": "NOTICE",
+          "size": 129,
+          "mode": 420
+        },
+        {
+          "path": "README.md",
+          "size": 3496,
+          "mode": 420
+        },
+        {
+          "path": "dist/cli/main.js",
+          "size": 703,
+          "mode": 420
+        },
+        {
+          "path": "dist/cli/program.js",
+          "size": 1504,
+          "mode": 420
+        },
+        {
+          "path": "docs/CLI.md",
+          "size": 832,
+          "mode": 420
+        },
+        {
+          "path": "package.json",
+          "size": 903,
+          "mode": 420
+        }
+      ],
+      "entryCount": 7,
+      "bundled": []
+    }
+  ]
+}
