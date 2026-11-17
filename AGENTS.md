@@ -8,6 +8,8 @@ The original request created this planning package. On 2026-11-17 the user autho
 
 ## Before work
 
+Publication update (2026-11-17): the user explicitly authorized origin `https://github.com/HaMZAAsif043/CI-Efficiency-Auditor.git` and pushing the completed project to main. That initial push succeeded. This supersedes historical no-remote assumptions; it does not authorize npm publication or deployment. Use task branches and draft PRs for future implementation unless directed otherwise.
+
 1. Read README, HANDOFF, ROADMAP, the chosen feature card, ARCHITECTURE, and VERIFICATION.
 2. Inspect actual files, package scripts, applicable instructions, and current Git state. Documentation is not proof that code exists.
 3. This folder initially has no Git repository or remote. Do not use a neighboring application's remote. Set up an independent repository when implementation/repository setup is requested. Do not initialize the shared workspace root.

@@ -2,7 +2,7 @@
 
 An open-source CLI project for turning GitHub Actions history into a short, evidence-backed improvement report.
 
-**Current scope: F1 foundation and F2 read-only collection.** Help, version and bounded snapshot collection are implemented. Analysis, reports and comparison remain planned. No measured savings, customers or public package/repository are claimed. Working package name: `@hamzaasif043/ci-efficiency-auditor`; registry name availability has not been established.
+**Current scope: F1 foundation and F2 read-only collection.** Help, version and bounded snapshot collection are implemented. Analysis, reports and comparison remain planned. No measured savings, customers or published npm package are claimed. [GitHub repository](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor). Working package name: `@hamzaasif043/ci-efficiency-auditor`; registry name availability has not been established.
 
 ## Local quick start
 
