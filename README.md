@@ -1,10 +1,29 @@
 # CI Efficiency Auditor
 
-An open-source CLI that turns GitHub Actions history into a short, evidence-backed improvement report.
+An open-source CLI project for turning GitHub Actions history into a short, evidence-backed improvement report.
 
-**Current state: planning only. No CLI, measured savings, passing application tests, customers, or published repository are claimed.** This is a new project, separate from the neighboring MarkItDown applications. The name is a working name; availability has not been checked.
+**Current scope: F1 CLI foundation.** Help/version are implemented; collection, analysis and reporting are planned. No measured savings, customers or public package/repository are claimed. Working package name: `@hamzaasif043/ci-efficiency-auditor`; registry name availability has not been established.
+
+## Local quick start
+
+Use Node.js 24.x (first verification target: 24.21.0) and npm. From a source checkout:
+
+```text
+npm ci
+npm run typecheck
+npm test
+node dist/cli/main.js --help
+node dist/cli/main.js --version
+npm run verify:package
+```
+
+On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`. `npm test` builds before running CLI-process tests. `verify:package` builds/packs, checks an exact content allowlist, installs the local tarball offline from the local cache, and invokes the installed executable through npm. It leaves inspectable artifacts under ignored `.tmp/`; dependency tarballs must already be cached by installation. The CLI is named `ci-audit` after local package installation.
+
+Running `collect`, `report` or `compare` exits 2 with an unavailable message. This release makes no GitHub requests, reads no token and writes no audit files. See [the CLI reference](./docs/CLI.md) and [contributor guide](./CONTRIBUTING.md). Licensed under [Apache-2.0](./LICENSE); ownership is recorded in [NOTICE](./NOTICE).
 
 ## Start here
+
+The following planning/agent documents are part of the source checkout; they are not included in the minimal npm tarball.
 
 1. [AGENTS.md](./AGENTS.md): execution rules for any coding agent.
 2. [HANDOFF.md](./HANDOFF.md): current state and exact next action.

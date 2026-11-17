@@ -1,6 +1,6 @@
 # F1 - CLI foundation
 
-Status: planned. Dependencies: none. Completion evidence: none.
+Status: in_progress. Dependencies: none. Completion evidence: pending; see [work item](../work-items/F1-cli-foundation.md).
 
 ## Outcome and scope
 

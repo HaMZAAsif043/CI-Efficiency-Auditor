@@ -5,7 +5,14 @@ param(
 $ErrorActionPreference = 'Stop'
 $planRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 $failures = [System.Collections.Generic.List[string]]::new()
-$markdownFiles = @(Get-ChildItem -LiteralPath $planRoot -Filter '*.md' -Recurse -File)
+$excludedDirectories = @('.git', 'node_modules', '.cache', '.tmp', 'dist', 'coverage', 'snapshots', 'reports')
+function Get-PlanningMarkdown([string]$directory) {
+    Get-ChildItem -LiteralPath $directory -Filter '*.md' -File
+    foreach ($child in Get-ChildItem -LiteralPath $directory -Directory) {
+        if ($excludedDirectories -notcontains $child.Name) { Get-PlanningMarkdown $child.FullName }
+    }
+}
+$markdownFiles = @(Get-PlanningMarkdown $planRoot)
 $localLinkCount = 0
 $acceptanceCount = 0
 
