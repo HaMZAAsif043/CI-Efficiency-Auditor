@@ -1,0 +1,14 @@
+import {createRequire} from 'node:module';
+import {spawnSync} from 'node:child_process';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+const video=resolve('marketing/assets/linkedin-demo.mp4');
+const decode=spawnSync(resolve(process.argv[2]),['-hide_banner','-i',video,'-f','null','-'],{encoding:'utf8',timeout:60000});assert.equal(decode.status,0);assert.match(decode.stderr,/h264/);assert.match(decode.stderr,/yuv420p/);assert.match(decode.stderr,/1080x1350/);assert.match(decode.stderr,/30 fps/);await writeFile('marketing/assets/linkedin-decode.txt',decode.stderr);
+const bytes=await readFile(video);assert.ok(bytes.indexOf('moov')<bytes.indexOf('mdat'));
+const {chromium}=createRequire(import.meta.url)(process.argv[3]);const browser=await chromium.launch({headless:true,executablePath:process.argv[4]});const page=await browser.newPage({viewport:{width:1080,height:1350}});
+const player=resolve('.cache/linkedin-render/player.html');await writeFile(player,'<!doctype html><html><body style="margin:0;background:#eeeee7"><video muted playsinline style="width:1080px;height:1350px" src="'+pathToFileURL(video).href+'"></video></body></html>');await page.goto(pathToFileURL(player).href);await page.waitForFunction(()=>document.querySelector('video').readyState>=1);
+const metadata=await page.locator('video').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,duration:v.duration}));assert.equal(metadata.width,1080);assert.equal(metadata.height,1350);assert.ok(metadata.duration>24&&metadata.duration<28);await page.locator('video').evaluate(v=>v.play());await page.waitForFunction(()=>document.querySelector('video').currentTime>.2);await page.locator('video').evaluate(v=>{v.pause();v.currentTime=12;});await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.seeking&&v.currentTime>=11.9;});await page.screenshot({path:'marketing/assets/linkedin-video-proof.png'});await browser.close();
+const checks={checkedAt:new Date().toISOString(),...metadata,codec:'H.264',pixelFormat:'yuv420p',frameRate:30,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),fastStart:true,fullDecodeExit:decode.status,browserPlayback:true,hasAudio:false,purpose:'LinkedIn feed video; saved public evidence replay',posted:false};await writeFile('marketing/assets/linkedin-video-checks.json',JSON.stringify(checks,null,2));console.log(JSON.stringify(checks));

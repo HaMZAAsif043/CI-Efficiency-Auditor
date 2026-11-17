@@ -22,7 +22,7 @@ Desktop/mobile screenshots, social preview and landscape/portrait WebM clips liv
 
     ffmpeg -i demo-landscape.webm -c:v libx264 -pix_fmt yuv420p -movflags +faststart demo-landscape.mp4
 
-The bundled local recorder only supplies a VP9 encoder. No MP4 or voiceover is claimed. Do not publish a private preview URL in public posts; use the GitHub repository until a public landing URL has been authorized and verified.
+The original bundled recorder only supplies a VP9 encoder. A later LinkedIn-specific export is now available as H.264 MP4: see [the upload package](./linkedin/README.md). No voiceover is claimed. Do not publish a private preview URL in public posts; use the GitHub repository until a public landing URL has been authorized and verified.
 
 ## A 20-second video / optional voiceover
 

@@ -1,0 +1,20 @@
+import {createRequire} from 'node:module';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import assert from 'node:assert/strict';
+const {chromium}=createRequire(import.meta.url)(process.argv[2]);
+const browser=await chromium.launch({headless:true,executablePath:process.argv[3]});
+const output=resolve('.cache/linkedin-render');await mkdir(output,{recursive:true});
+const context=await browser.newContext({viewport:{width:1080,height:1350},recordVideo:{dir:output,size:{width:1080,height:1350}}});
+const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.setContent(await readFile('marketing/linkedin/render.html','utf8'));
+const complete=JSON.parse(await readFile('marketing/site/sample-complete.json','utf8'));
+const partial=JSON.parse(await readFile('marketing/site/sample-partial.json','utf8'));
+assert.equal(complete.coverage.complete,true);assert.equal(complete.jobs.reduce((n,j)=>n+j.steps.length,0),6);
+await page.evaluate(({complete,partial})=>{const format=s=>(s.coverage.complete?'Complete':'Partial')+' snapshot: '+s.runs.length+' runs, '+s.attempts.length+' attempts, '+s.jobs.length+' jobs, '+s.coverage.requestCount+' requests.';document.querySelector('#complete-output').textContent=format(complete);document.querySelector('#partial-output').textContent=format(partial)+'\nIncomplete coverage: '+partial.coverage.reasons.join(', ')+'.';},{complete,partial});
+assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight));
+await page.screenshot({path:'marketing/assets/linkedin-thumbnail.png'});
+const schedule=[3000,6000,6000,4000,5000];
+for(let i=0;i<schedule.length;i++){await page.evaluate(n=>window.showScene(n),i);await page.screenshot({path:'marketing/assets/linkedin-scene-'+(i+1)+'.png'});await page.waitForTimeout(schedule[i]);}
+const video=page.video();await context.close();await video.saveAs(resolve('.cache/linkedin-render/linkedin-source.webm'));await browser.close();assert.deepEqual(errors,[]);
+await writeFile('marketing/assets/linkedin-render-checks.json',JSON.stringify({checkedAt:new Date().toISOString(),canvas:'1080x1350',scheduleMilliseconds:schedule,pageErrors:errors,sampleKind:'saved public output replay',completeCounts:{runs:complete.runs.length,jobs:complete.jobs.length,steps:6,requests:complete.coverage.requestCount},partialReasons:partial.coverage.reasons},null,2));console.log('PASS: five scenes rendered; saved-output identities and 4:5 layout checked.');

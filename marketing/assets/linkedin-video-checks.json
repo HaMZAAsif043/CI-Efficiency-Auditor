@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-17T07:46:48.565Z",
+  "width": 1080,
+  "height": 1350,
+  "duration": 24.8,
+  "codec": "H.264",
+  "pixelFormat": "yuv420p",
+  "frameRate": 30,
+  "bytes": 625608,
+  "sha256": "5308c2d2b8504035ac900b90cae62fb0a6d6ed39c9def975d6fd245f7e133794",
+  "fastStart": true,
+  "fullDecodeExit": 0,
+  "browserPlayback": true,
+  "hasAudio": false,
+  "purpose": "LinkedIn feed video; saved public evidence replay",
+  "posted": false
+}

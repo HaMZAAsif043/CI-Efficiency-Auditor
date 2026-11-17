@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:03,000
+Before optimizing your CI, collect the evidence.
+
+2
+00:00:03,000 --> 00:00:09,000
+A saved public sample: one run, one job, six steps, four requests.
+
+3
+00:00:09,000 --> 00:00:15,000
+Hit a limit? Partial coverage stays explicit.
+
+4
+00:00:15,000 --> 00:00:19,000
+GET-only requests. Local JSON. Analysis is planned.
+
+5
+00:00:19,000 --> 00:00:27,000
+Try CI Efficiency Auditor on GitHub. Tell us what's missing.
