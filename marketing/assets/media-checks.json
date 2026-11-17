@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-17T06:46:42.359Z",
+  "landscapeDurationSeconds": 19.84,
+  "checks": [
+    "embedded video metadata",
+    "video playback time advances",
+    "portrait download HTTP 200",
+    "social image HTTP 200",
+    "WebVTT MIME",
+    "final mobile no overflow"
+  ]
+}

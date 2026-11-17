@@ -29,7 +29,11 @@ The run cap commonly produces partial coverage: exit 3 means an explicit partial
 
 Collection uses GET requests only, never source/log endpoints. Without `--anonymous`, an existing `GITHUB_TOKEN` may be used; no credential files are discovered or written. Snapshot/cache names and metadata may be private: keep them local. Cache defaults to `.cache/ci-audit`; use fixed `--from` and `--to` values for repeatable cache windows. Sliding default windows get different cache keys. `--no-cache` disables both reads and writes. Files request restrictive POSIX permissions; Windows ACLs depend on the environment. See [the CLI reference](./docs/CLI.md) and [contributor guide](./CONTRIBUTING.md). Licensed under [Apache-2.0](./LICENSE); ownership is recorded in [NOTICE](./NOTICE).
 
-## Start here
+## Demo and launch materials
+
+[Landing page source](./marketing/site/index.html), [landscape demo](./marketing/site/demo-landscape.webm), [portrait demo](./marketing/site/demo-portrait.webm), and [launch copy](./marketing/LAUNCH.md) are included. The videos replay saved public evidence; they are not live executions. [Verified private website preview](https://ci-efficiency-auditor.dancingoats.chatgpt.site) (owner access). Analysis and reports remain roadmap work.
+
+## Project guides
 
 The following planning/agent documents are part of the source checkout; they are not included in the minimal npm tarball.
 
