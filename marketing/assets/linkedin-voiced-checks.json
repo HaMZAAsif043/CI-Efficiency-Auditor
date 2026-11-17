@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-17T07:58:23.149Z",
+  "duration": 33.033333,
+  "width": 1080,
+  "height": 1350,
+  "audioTracks": 1,
+  "videoCodec": "H.264",
+  "audioCodec": "AAC",
+  "voice": "Microsoft Zira Desktop (synthetic English)",
+  "frameRate": 30,
+  "meanVolumeDb": -16.8,
+  "fullDecodeExit": 0,
+  "browserPlayback": true,
+  "fastStart": true,
+  "bytes": 914059,
+  "sha256": "24cf02294b56978ae7c7cdd13aaa6dd3eaf0b846604730fb2cc62f76d7100205",
+  "kind": "narrated replay of saved public evidence",
+  "posted": false
+}

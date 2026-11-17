@@ -1,0 +1,7 @@
+[
+  "Slow or unreliable GitHub Actions? This is C I Efficiency Auditor, an open-source tool for developers investigating their pipelines.",
+  "It collects workflow runs, rerun attempts, jobs, and step timings into local J S O N.",
+  "It also shows when collection is incomplete, so you know what is missing.",
+  "Collection works today. Analysis and reports are next.",
+  "Try the source on GitHub, and tell me what would help your workflow."
+]

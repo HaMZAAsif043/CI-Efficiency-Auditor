@@ -1,5 +1,7 @@
 # LinkedIn upload package
 
+**Use the new narrated version:** marketing/assets/linkedin-demo-voiced.mp4, with linkedin-voiced-thumbnail.png. [Narration, checks and reproduction](./VOICED.md). The original silent cut below remains available as an alternative.
+
 Use marketing/assets/linkedin-demo.mp4 and optionally marketing/assets/linkedin-thumbnail.png. The MP4 is a new 4:5 cut with large text and five scenes, not just a renamed WebM. It is silent; all essential information is on screen. The video replays saved public evidence, with no live API execution or savings claim.
 
 Use POST.md as the accompanying post text. The optional linkedin-captions.srt follows the scene narration; the exported video already has readable on-screen text.

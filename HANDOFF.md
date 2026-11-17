@@ -4,6 +4,8 @@ Updated: 2026-11-17 (Asia/Karachi).
 
 ## Latest delivery — launch kit
 
+Narration follow-up: the user found the silent demo unclear. The recommended upload is now marketing/assets/linkedin-demo-voiced.mp4: 33.03 seconds with synthetic English narration, clearer opening/audience/purpose and explicit current limits. [Voice evidence/reproduction](./marketing/linkedin/VOICED.md) records full decode, one AAC audio track, non-silent levels and browser playback. The original silent cut remains available. No LinkedIn post, private Site change or CLI change occurred.
+
 LinkedIn follow-up: the user requested a post-ready demo. [MP4 verification](./marketing/linkedin/VERIFICATION.md) records the new 24.8-second, 1080x1350 H.264 MP4 with large on-screen text, actual browser playback and full decode checks. The export, thumbnail, optional SRT and [copy-ready post](./marketing/linkedin/POST.md) are included in the same launch-kit branch/PR. Nothing was posted to LinkedIn and the private Site was not changed.
 
 The user's request for a landing page/demo videos is implemented on `feat/launch-kit`, based on main revision `0331a8b4fd466ae01d5f58e57f793ea77fb473ca`. [M1 evidence](./evidence/M1/VERIFICATION.md) records desktop/mobile checks, two actual silent WebM clips, copy/download behavior and final media playback. [Launch copy](./marketing/LAUNCH.md) remains draft; no outreach or public social posts were sent.
