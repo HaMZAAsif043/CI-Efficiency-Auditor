@@ -1,7 +1,7 @@
 {
   "name": "@hamzaasif043/ci-efficiency-auditor",
   "version": "0.1.0",
-  "description": "An evidence-backed GitHub Actions efficiency auditor (CLI foundation).",
+  "description": "Bounded, read-only GitHub Actions metadata collection for evidence-backed CI analysis.",
   "type": "module",
   "license": "Apache-2.0",
   "author": "HaMZAAsif043",

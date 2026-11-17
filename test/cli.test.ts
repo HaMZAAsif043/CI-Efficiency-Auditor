@@ -25,7 +25,7 @@ describe('actual CLI process contract', () => {
     const result = invoke(args);
     expect(result.status).toBe(0);
     expect(result.stdout).toContain('Usage: ci-audit');
-    expect(result.stdout).toContain('help and version only');
+    expect(result.stdout).toContain('Read-only collection');
     expect(result.stdout).toContain('unavailable');
     expect(result.stderr).toBe('');
   });
@@ -40,8 +40,8 @@ describe('actual CLI process contract', () => {
   test.each([
     { args: ['collec'], diagnostic: 'unknown command' },
     { args: ['--bogus'], diagnostic: 'unknown option' },
-    { args: ['collect', '--repo', 'owner/repo'], diagnostic: 'unknown option' },
-    { args: ['collect', 'extra'], diagnostic: 'too many arguments' },
+    { args: ['collect', '--repo', 'owner/repo'], diagnostic: 'required option' },
+    { args: ['collect', '--repo', 'owner/repo', '--out', 'snapshot.json', 'extra'], diagnostic: 'too many arguments' },
   ])('invalid arguments $args fail with actionable errors', ({ args, diagnostic }) => {
     const result = invoke(args);
     expect(result.status).toBe(2);
@@ -49,7 +49,7 @@ describe('actual CLI process contract', () => {
     expect(result.stderr).toContain('--help');
   });
 
-  test.each(['collect', 'report', 'compare'])('%s cannot fabricate successful work', (command) => {
+  test.each(['report', 'compare'])('%s cannot fabricate successful work', (command) => {
     const result = invoke([command]);
     expect(result.status).toBe(2);
     expect(result.stderr).toContain('not implemented yet');
@@ -57,10 +57,23 @@ describe('actual CLI process contract', () => {
     expect(readdirSync(scratch)).toEqual([]);
   });
 
-  test.each(['collect', 'report', 'compare'])('%s help is available without running work', (command) => {
+  test.each(['report', 'compare'])('%s help is available without running work', (command) => {
     const result = invoke([command, '--help']);
     expect(result.status).toBe(0);
     expect(result.stdout).toContain('unavailable');
     expect(result.stderr).toBe('');
+  });
+
+  test.each([
+    ['--repo', '../escape', '--out', 'snapshot.json'],
+    ['--repo', 'owner/repo', '--out', 'snapshot.json', '--days', '0'],
+    ['--repo', 'owner/repo', '--out', 'snapshot.json', '--to', 'not-a-date'],
+    ['--repo', 'owner/repo', '--out', 'snapshot.json', '--max-requests', '20000'],
+    ['--repo', 'owner/repo', '--out', 'snapshot.json', '--from', '2026-11-17T00:00:00Z', '--to', '2026-11-16T00:00:00Z'],
+  ])('rejects invalid collection flags before network access: %j', (...args: string[]) => {
+    const result = invoke(['collect', ...args]);
+    expect(result.status).toBe(2);
+    expect(result.stderr).toMatch(/Invalid collection options|Collection window/);
+    expect(readdirSync(scratch)).toEqual([]);
   });
 });

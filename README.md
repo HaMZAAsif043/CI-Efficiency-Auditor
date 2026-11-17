@@ -2,7 +2,7 @@
 
 An open-source CLI project for turning GitHub Actions history into a short, evidence-backed improvement report.
 
-**Current scope: F1 CLI foundation.** Help/version are implemented; collection, analysis and reporting are planned. No measured savings, customers or public package/repository are claimed. Working package name: `@hamzaasif043/ci-efficiency-auditor`; registry name availability has not been established.
+**Current scope: F1 foundation and F2 read-only collection.** Help, version and bounded snapshot collection are implemented. Analysis, reports and comparison remain planned. No measured savings, customers or public package/repository are claimed. Working package name: `@hamzaasif043/ci-efficiency-auditor`; registry name availability has not been established.
 
 ## Local quick start
 
@@ -19,7 +19,15 @@ npm run verify:package
 
 On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`. `npm test` builds before running CLI-process tests. `verify:package` builds/packs, checks an exact content allowlist, installs the local tarball offline from the local cache, and invokes the installed executable through npm. It leaves inspectable artifacts under ignored `.tmp/`; dependency tarballs must already be cached by installation. The CLI is named `ci-audit` after local package installation.
 
-Running `collect`, `report` or `compare` exits 2 with an unavailable message. This release makes no GitHub requests, reads no token and writes no audit files. See [the CLI reference](./docs/CLI.md) and [contributor guide](./CONTRIBUTING.md). Licensed under [Apache-2.0](./LICENSE); ownership is recorded in [NOTICE](./NOTICE).
+Collect a small public sample:
+
+```text
+node dist/cli/main.js collect --repo cli/cli --days 7 --max-runs 1 --max-requests 8 --out snapshots/sample.json --no-cache --anonymous
+```
+
+The run cap commonly produces partial coverage: exit 3 means an explicit partial snapshot was written, not a failed analysis. Exit 0 means collection was complete; exit 2 means invalid options/access; exit 1 means an unexpected transport/output failure. No analysis is performed yet. `report` and `compare` remain unavailable (exit 2).
+
+Collection uses GET requests only, never source/log endpoints. Without `--anonymous`, an existing `GITHUB_TOKEN` may be used; no credential files are discovered or written. Snapshot/cache names and metadata may be private: keep them local. Cache defaults to `.cache/ci-audit`; use fixed `--from` and `--to` values for repeatable cache windows. Sliding default windows get different cache keys. `--no-cache` disables both reads and writes. Files request restrictive POSIX permissions; Windows ACLs depend on the environment. See [the CLI reference](./docs/CLI.md) and [contributor guide](./CONTRIBUTING.md). Licensed under [Apache-2.0](./LICENSE); ownership is recorded in [NOTICE](./NOTICE).
 
 ## Start here
 
@@ -36,7 +44,7 @@ The following planning/agent documents are part of the source checkout; they are
 
 ## Intended experience
 
-The following command is a **proposed interface**, not an installed or implemented command:
+`collect` below is implemented; `report` and `compare` are **proposed interfaces** and currently return unavailable errors:
 
 ```text
 ci-audit collect --repo owner/repo --days 30 --out snapshots/baseline.json

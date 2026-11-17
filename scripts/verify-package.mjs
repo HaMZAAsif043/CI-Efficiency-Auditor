@@ -30,7 +30,11 @@ try {
   assert.equal(packed.status, 0, packed.stderr);
   const packInfo = JSON.parse(packed.stdout);
   const files = packInfo[0].files.map(({ path }) => path).sort();
-  const expected = ['LICENSE', 'NOTICE', 'README.md', 'dist/cli/main.js', 'dist/cli/program.js', 'docs/CLI.md', 'package.json'];
+  const expected = ['LICENSE', 'NOTICE', 'README.md',
+    'dist/cli/collect-command.js', 'dist/cli/main.js', 'dist/cli/program.js',
+    'dist/github/api.js', 'dist/github/collect.js', 'dist/github/normalize.js',
+    'dist/snapshot/cache.js', 'dist/snapshot/io.js', 'dist/snapshot/schema.js',
+    'docs/CLI.md', 'package.json'];
   assert.deepEqual(files, expected, 'Package contents changed; inspect and update the explicit allowlist.');
   const archive = join(scratch, packInfo[0].filename);
   const sha256 = createHash('sha256').update(readFileSync(archive)).digest('hex');
@@ -47,9 +51,9 @@ try {
 
   const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
   for (const [args, status, match] of [
-    [['--help'], 0, 'help and version only'],
+    [['--help'], 0, 'Read-only collection'],
     [['--version'], 0, manifest.version],
-    [['collect'], 2, 'not implemented yet'],
+    [['collect'], 2, 'required option'],
     [['--bogus'], 2, 'unknown option'],
   ]) {
     const result = npm(['exec', '--offline', '--', 'ci-audit', ...args], installation);

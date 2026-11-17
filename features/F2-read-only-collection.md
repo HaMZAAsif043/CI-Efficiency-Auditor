@@ -1,6 +1,6 @@
 # F2 - Read-only collection
 
-Status: planned. Dependencies: F1. Completion evidence: none.
+Status: in_progress. Dependencies: F1 (verified). Completion evidence: pending; [work item](../work-items/F2-read-only-collection.md).
 
 ## Outcome and scope
 

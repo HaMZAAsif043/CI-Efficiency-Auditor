@@ -1,6 +1,6 @@
 # Architecture and data contract
 
-This is a proposed design. Resolve minor implementation details during the relevant work item and record material departures.
+F1/F2 implement the CLI and collection portions of this design. Analysis/reporting/comparison remain proposed. The Zod definitions in `src/snapshot/schema.ts` are the executable Snapshot v1 contract; snapshots additionally record the GitHub API version and cache usage. Resolve minor implementation details during the relevant work item and record material departures.
 
 ## Structure
 

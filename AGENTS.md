@@ -4,7 +4,7 @@
 
 This folder contains the CI Efficiency Auditor plan. It is independent of `review-markitdown-fe` and `review-markitdown-be`. Parent workspace safety/workflow instructions still apply; their MarkItDown architecture and roadmap do not define this product.
 
-The original request created this planning package. On 2026-11-17 the user authorized proceeding with F1 implementation. This does not authorize every planned feature, creating a remote repository, package publication, or deployment. Follow subsequent user requests within scope without asking again for routine implementation choices. Customer discovery targets are prioritization gates, not permission requirements that override a direct user instruction.
+The original request created this planning package. On 2026-11-17 the user authorized F1 implementation and then continuation into F2. This does not authorize every planned feature, creating a remote repository, package publication, or deployment. Follow subsequent user requests within scope without asking again for routine implementation choices. Customer discovery targets are prioritization gates, not permission requirements that override a direct user instruction.
 
 ## Before work
 
