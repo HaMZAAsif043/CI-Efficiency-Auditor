@@ -10,6 +10,8 @@ The Sites landing page was deployed successfully at https://ci-efficiency-audito
 
 Next: review the launch PR and preview. Public Site access requires the user to request that audience change. Future product implementation still starts with F3 on a separate task branch. CLI behavior/dependencies are unchanged by this launch work.
 
+Launch publication: commit `431c35b7ff5d8f5339136dcb4850bfb2bec0e982` was pushed and verified against GitHub. [Draft PR #1](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor/pull/1) is open and unmerged; this handoff update follows separately. An initial large upload stalled; a bounded HTTP/1.1 retry succeeded. The owned local preview server was stopped after checks; use the deployed private URL or restart the documented local server. No hosted CLI CI result or social reach is claimed.
+
 ## Completed authorized work
 
 F1 CLI foundation and F2 read-only collection are verified and published to the user's requested GitHub main branch. Initial pushed revision: bf1ece5. F2 source revision: a4c63bb744201b6181ce41b70aee1b29c96563b4; evidence/status documentation followed separately. Original task branches remain local.
