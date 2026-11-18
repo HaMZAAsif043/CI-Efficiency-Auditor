@@ -21,6 +21,7 @@ mkdirSync(join(root,'.tmp'),{recursive:true});
 const directory=mkdtempSync(join(root,'.tmp/pages-publish-'));
 if(push){
  git(directory,['init','-b','gh-pages']);
+ git(directory,['config','core.autocrlf','false']);
  git(directory,['remote','add','origin',origin]);
  const existing=git(directory,['ls-remote','--exit-code','--heads','origin','refs/heads/gh-pages'],true);
  if(existing.status===0){git(directory,['fetch','--depth=1','origin','gh-pages']);git(directory,['switch','-C','gh-pages','FETCH_HEAD']);}
