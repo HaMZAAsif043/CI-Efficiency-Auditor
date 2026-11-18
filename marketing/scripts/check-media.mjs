@@ -1,0 +1,17 @@
+import {createRequire} from 'node:module';
+import {writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const {chromium}=createRequire(import.meta.url)(process.argv[2]);
+const browser=await chromium.launch({headless:true,executablePath:process.argv[3]});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+await page.goto('http://127.0.0.1:4179/');await page.waitForFunction(()=>window.demoReady);
+await page.locator('video').evaluate(video=>video.load());await page.waitForFunction(()=>document.querySelector('video').readyState>=1);
+const duration=await page.locator('video').evaluate(video=>video.duration);assert.ok(duration>10&&duration<35);
+await page.locator('video').evaluate(video=>{video.muted=true;return video.play();});
+await page.waitForFunction(()=>document.querySelector('video').currentTime>.2);await page.locator('video').evaluate(video=>video.pause());
+assert.equal((await page.request.get('http://127.0.0.1:4179/demo-portrait.webm')).status(),200);
+assert.equal((await page.request.get('http://127.0.0.1:4179/social-preview.png')).status(),200);
+assert.match((await page.request.get('http://127.0.0.1:4179/demo-captions.vtt')).headers()['content-type'],/text\/vtt/);
+await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'marketing/assets/landing-desktop.png',fullPage:true});
+await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:'marketing/assets/landing-mobile.png',fullPage:true});await browser.close();
+await writeFile('marketing/assets/media-checks.json',JSON.stringify({checkedAt:new Date().toISOString(),landscapeDurationSeconds:duration,checks:['embedded video metadata','video playback time advances','portrait download HTTP 200','social image HTTP 200','WebVTT MIME','final mobile no overflow']},null,2));console.log('PASS: final video playback, media routes and mobile layout.');

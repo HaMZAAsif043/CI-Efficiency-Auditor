@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "collectorVersion": "0.1.0",
+  "collectedAt": "2026-11-17T06:11:32.249Z",
+  "repository": "cli/cli",
+  "apiVersion": "2026-03-10",
+  "window": {
+    "from": "2026-11-17T01:43:00.000Z",
+    "to": "2026-11-17T01:44:00.000Z"
+  },
+  "coverage": {
+    "complete": true,
+    "reasons": [],
+    "requestCount": 4,
+    "maxRequests": 20,
+    "maxRuns": 5,
+    "returnedRunCount": 1,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "oldestEntryAt": null
+    }
+  },
+  "runs": [
+    {
+      "id": 43997705765,
+      "workflowId": 389529352,
+      "name": "Dependabot PR Triage Scheduler",
+      "sha": "0536d5e5288458c696ccbeac0e68d87128300069",
+      "branch": "trunk",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-11-17T01:43:14Z",
+      "startedAt": "2026-11-17T01:43:14Z",
+      "updatedAt": "2026-11-17T01:43:25Z",
+      "attempt": 1,
+      "url": "https://github.com/cli/cli/actions/runs/43997705765"
+    }
+  ],
+  "attempts": [
+    {
+      "runId": 43997705765,
+      "number": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-11-17T01:43:14Z",
+      "updatedAt": "2026-11-17T01:43:25Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 133753750178,
+      "runId": 43997705765,
+      "attempt": 1,
+      "name": "dispatch",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-11-17T01:43:18Z",
+      "completedAt": "2026-11-17T01:43:24Z",
+      "url": "https://github.com/cli/cli/actions/runs/43997705765/job/133753750178",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-17T01:43:19Z",
+          "completedAt": "2026-11-17T01:43:19Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-17T01:43:19Z",
+          "completedAt": "2026-11-17T01:43:21Z"
+        },
+        {
+          "number": 3,
+          "name": "Compute Dependabot triage work list",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-17T01:43:21Z",
+          "completedAt": "2026-11-17T01:43:22Z"
+        },
+        {
+          "number": 4,
+          "name": "Dispatch Dependabot triage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "startedAt": "2026-11-17T01:43:22Z",
+          "completedAt": "2026-11-17T01:43:22Z"
+        },
+        {
+          "number": 8,
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-17T01:43:22Z",
+          "completedAt": "2026-11-17T01:43:22Z"
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-17T01:43:22Z",
+          "completedAt": "2026-11-17T01:43:22Z"
+        }
+      ]
+    }
+  ],
+  "diagnostics": []
+}

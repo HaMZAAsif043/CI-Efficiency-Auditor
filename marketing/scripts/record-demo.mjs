@@ -1,0 +1,32 @@
+import { createRequire } from 'node:module';
+import { mkdir, writeFile, copyFile } from 'node:fs/promises';
+import { resolve, join } from 'node:path';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url);
+const {chromium}=require(process.argv[2]);
+const executablePath=process.argv[3];
+const output=resolve('marketing/assets');await mkdir(output,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath});const errors=[];
+const context=await browser.newContext({viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
+const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+assert.equal((await page.goto('http://127.0.0.1:4179/')).status(),200);await page.waitForFunction(()=>window.demoReady);
+assert.equal(await page.locator('#steps').textContent(),'6');await page.locator('#replay').click();await page.waitForFunction(()=>document.querySelector('#playback-status').textContent.startsWith('SAVED REPLAY COMPLETE'));
+assert.match(await page.locator('#terminal-output').textContent(),/Complete snapshot: 1 runs, 1 attempts, 1 jobs, 4 requests/);
+await page.locator('[data-sample="partial"]').click();assert.match(await page.locator('#coverage').textContent(),/EXIT 3/);await page.locator('#replay').click();await page.waitForFunction(()=>document.querySelector('#playback-status').textContent.startsWith('SAVED REPLAY COMPLETE'));
+assert.match(await page.locator('#terminal-output').textContent(),/Incomplete coverage: run_limit/);
+const downloadPromise=page.waitForEvent('download');await page.locator('#download').click();const download=await downloadPromise;await download.saveAs(join(output,'download-checked.json'));
+await page.locator('#copy').click();assert.match(await page.locator('#copy-status').textContent(),/copied/);
+await page.locator('[data-sample="complete"]').click();await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:join(output,'landing-desktop.png'),fullPage:true});
+const mobile=await context.newPage({viewport:{width:390,height:844}});await mobile.setViewportSize({width:390,height:844});await mobile.goto('http://127.0.0.1:4179/');await mobile.waitForFunction(()=>window.demoReady);assert.ok(await mobile.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await mobile.screenshot({path:join(output,'landing-mobile.png'),fullPage:true});
+await context.close();
+for(const [name,width,height] of [['demo-landscape',1280,800],['demo-portrait',720,1280]]){
+ const videoContext=await browser.newContext({viewport:{width,height},recordVideo:{dir:output,size:{width,height}}});const videoPage=await videoContext.newPage();await videoPage.goto('http://127.0.0.1:4179/?video=1');await videoPage.waitForFunction(()=>window.demoReady);
+ await videoPage.evaluate(()=>document.querySelector('#video-caption').textContent='Before optimizing your CI, collect the evidence.');await videoPage.waitForTimeout(1800);await videoPage.locator('#replay').click();await videoPage.waitForTimeout(4300);
+ await videoPage.evaluate(()=>document.querySelector('#video-caption').textContent='Real public sample. One run. Six steps. Four requests.');await videoPage.waitForTimeout(2800);
+ if(name==='demo-landscape')await videoPage.screenshot({path:join(output,'demo-poster.png')});
+ await videoPage.locator('[data-sample="partial"]').click();await videoPage.evaluate(()=>document.querySelector('#video-caption').textContent='Hit a limit? Partial coverage is explicit.');await videoPage.locator('#replay').click();await videoPage.waitForTimeout(5000);
+ await videoPage.evaluate(()=>document.querySelector('#video-caption').textContent='Open source. Local JSON. github.com/HaMZAAsif043/CI-Efficiency-Auditor');await videoPage.waitForTimeout(3200);
+ const video=videoPage.video();await videoContext.close();await video.saveAs(join(output,name+'.webm'));
+}
+const social=await browser.newPage({viewport:{width:1200,height:630}});await social.goto('http://127.0.0.1:4179/');await social.waitForFunction(()=>window.demoReady);await social.screenshot({path:join(output,'social-preview.png')});await browser.close();
+assert.deepEqual(errors,[]);await writeFile(join(output,'browser-checks.json'),JSON.stringify({checkedAt:new Date().toISOString(),desktop:'1440x1000',mobile:'390x844',checks:['HTTP 200','complete replay matches saved output','partial replay and exit 3','JSON download','clipboard copy','mobile no horizontal overflow','no JavaScript page errors'],recordings:['demo-landscape.webm','demo-portrait.webm'],kind:'silent animated replay of saved evidence, not a live CLI recording'},null,2));console.log('PASS: browser checks, screenshots and two recorded demo clips.');

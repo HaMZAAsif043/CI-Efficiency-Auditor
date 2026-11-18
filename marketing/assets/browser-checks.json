@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-17T06:40:30.467Z",
+  "desktop": "1440x1000",
+  "mobile": "390x844",
+  "checks": [
+    "HTTP 200",
+    "complete replay matches saved output",
+    "partial replay and exit 3",
+    "JSON download",
+    "clipboard copy",
+    "mobile no horizontal overflow",
+    "no JavaScript page errors"
+  ],
+  "recordings": [
+    "demo-landscape.webm",
+    "demo-portrait.webm"
+  ],
+  "kind": "silent animated replay of saved evidence, not a live CLI recording"
+}
