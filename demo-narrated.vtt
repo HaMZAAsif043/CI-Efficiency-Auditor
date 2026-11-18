@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:09.843
+Slow or unreliable GitHub Actions? This is C I Efficiency Auditor, an open-source tool for developers investigating their pipelines.
+
+2
+00:00:09.843 --> 00:00:17.611
+It collects workflow runs, rerun attempts, jobs, and step timings into local J S O N.
+
+3
+00:00:17.611 --> 00:00:22.945
+It also shows when collection is incomplete, so you know what is missing.
+
+4
+00:00:22.945 --> 00:00:28.064
+Collection works today. Analysis and reports are next.
+
+5
+00:00:28.064 --> 00:00:33.012
+Try the source on GitHub, and tell me what would help your workflow.
