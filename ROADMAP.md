@@ -14,6 +14,8 @@ All statuses below describe engineering/research work, not publication or revenu
 
 ## Status rules
 
+Public hosting milestone (2026-11-18): [GitHub Pages is live](https://hamzaasif043.github.io/CI-Efficiency-Auditor/), with narrated media and verified desktop/mobile interactions. [M2 work item](./work-items/M2-github-pages.md) and [live evidence](./evidence/M2/VERIFICATION.md) record deployment independently of [draft source PR #2](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor/pull/2). This does not complete F3-F6 or establish customer/revenue validation.
+
 `planned -> in_progress -> implemented -> verified -> ready_for_review`
 
 - `implemented`: code exists; acceptance may still be unproven.

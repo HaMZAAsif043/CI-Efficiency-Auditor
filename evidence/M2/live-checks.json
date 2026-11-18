@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-11-18T12:14:59.318Z",
+  "url": "https://hamzaasif043.github.io/CI-Efficiency-Auditor/",
+  "sourceCommit": "b29e60901ba8bfd267b15ae0c4021b1642c50a3c",
+  "files": [
+    {
+      "name": "index.html",
+      "status": 200,
+      "sha256": "adefeb13260e2c4a431c03ac6b25e566b545201f3e80405d8d332417f9f92241",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "name": "style.css",
+      "status": 200,
+      "sha256": "78b72bf0b5b28cce7d59b24c6a20bdb1fbf1b46c416ba2feae97ccdf92fe1e77",
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "name": "app.js",
+      "status": 200,
+      "sha256": "34a8ecfcc26b5344741a90e8ffe1069b54d19d9cdbbf41472b90f2de8fc9d230",
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "name": "sample-complete.json",
+      "status": 200,
+      "sha256": "9943caa8daa65fa7033851b1e519e7bcc5c35a794f3150da5b513b04d930c834",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "name": "sample-partial.json",
+      "status": 200,
+      "sha256": "4f3f2b1f9061973e5ccea5ea3d1cfcbf06d29e16d759867a97a304e3c0ee8e3f",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "name": "social-preview.png",
+      "status": 200,
+      "sha256": "cb08cb7d3b36013386c1021463fef5cefba6caa93c08d7920092b40f5babdac7",
+      "contentType": "image/png"
+    },
+    {
+      "name": "demo-landscape.webm",
+      "status": 200,
+      "sha256": "dc9b17ddfce972c500f956487783b3e3be0d61155b38928d775641ebcc8aa36c",
+      "contentType": "video/webm"
+    },
+    {
+      "name": "demo-portrait.webm",
+      "status": 200,
+      "sha256": "3a43f792913b49f29d85c5ad4c4ec2134fc8edf9212282fb57921a9f1963b13c",
+      "contentType": "video/webm"
+    },
+    {
+      "name": "demo-poster.png",
+      "status": 200,
+      "sha256": "ebc902f332478dcf11f15b365692dce939ad83ea389b1680f656fdf265720ac2",
+      "contentType": "image/png"
+    },
+    {
+      "name": "demo-captions.vtt",
+      "status": 200,
+      "sha256": "9a4bac24ec079da411b490c676a033cffd40f3f1359be15a5bab31c75e6bd338",
+      "contentType": "text/vtt; charset=utf-8"
+    },
+    {
+      "name": "demo-narrated.mp4",
+      "status": 200,
+      "sha256": "24cf02294b56978ae7c7cdd13aaa6dd3eaf0b846604730fb2cc62f76d7100205",
+      "contentType": "video/mp4"
+    },
+    {
+      "name": "demo-narrated.png",
+      "status": 200,
+      "sha256": "493f95b55845dde054c9ae7239eeed2917c7cda06ed031310dcece70bd71d735",
+      "contentType": "image/png"
+    },
+    {
+      "name": "demo-narrated.vtt",
+      "status": 200,
+      "sha256": "95e03b320af3e66925959fe706022ca613a6e775cdaa67cb0aaf9263195c2432",
+      "contentType": "text/vtt; charset=utf-8"
+    }
+  ],
+  "media": {
+    "duration": 33.033333,
+    "width": 1080,
+    "height": 1350,
+    "audioTracks": 1
+  },
+  "checks": [
+    "HTTP 200",
+    "13 asset hashes match committed artifact",
+    "complete and partial replay",
+    "copy/download",
+    "narrated video and audio track",
+    "mobile no horizontal overflow",
+    "no page errors",
+    "no GitHub API requests from demo"
+  ]
+}
