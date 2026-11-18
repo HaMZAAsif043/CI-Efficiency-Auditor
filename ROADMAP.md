@@ -12,6 +12,8 @@ All statuses below describe engineering/research work, not publication or revenu
 | [F5](./features/F5-baseline-comparison.md) | Conservative snapshot comparison | F3/F4 | planned | None |
 | [F6](./features/F6-release-and-pilot.md) | Installation and pilot rehearsal | F1-F5 | planned | None |
 
+Authorized launch follow-up M3: actual-run demo and plain LinkedIn copy are ready for review in [draft PR #3](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor/pull/3). [Acceptance evidence](./evidence/M3/VERIFICATION.md). This does not advance product analysis or customer validation.
+
 ## Status rules
 
 `planned -> in_progress -> implemented -> verified -> ready_for_review`

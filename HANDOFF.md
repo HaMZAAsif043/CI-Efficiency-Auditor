@@ -1,10 +1,14 @@
 ﻿# Current handoff
 
-Updated: 2026-11-17 (Asia/Karachi).
+Updated: 2026-11-18 (Asia/Karachi).
 
 ## Latest delivery — launch kit
 
-Narration follow-up: the user found the silent demo unclear. The recommended upload is now marketing/assets/linkedin-demo-voiced.mp4: 33.03 seconds with synthetic English narration, clearer opening/audience/purpose and explicit current limits. [Voice evidence/reproduction](./marketing/linkedin/VOICED.md) records full decode, one AAC audio track, non-silent levels and browser playback. The original silent cut remains available. No LinkedIn post, private Site change or CLI change occurred.
+M3 follow-up (2026-11-18): the user felt the slide/narration demo was too AI-generated. A separate feat/straightforward-demo branch adds a 16.9-second actual CLI recording in a plain local console wrapper, no synthetic voice, a plain post and a short own-voice script. [Asset index](./marketing/START-HERE.md) and [actual-run verification](./marketing/authentic/VERIFICATION.md) identify files and proof. The public Pages site remains at https://hamzaasif043.github.io/CI-Efficiency-Auditor/; this alternative has not replaced hosted media or been posted to LinkedIn. Pages configuration and its PR #2 belong to the prior branch and are unchanged by this work.
+
+M3 publication: implementation a425f6bb3efce8f39f3f34822592c2b70cc11374 was pushed; [draft PR #3](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor/pull/3) is open, not merged. [Acceptance evidence](./evidence/M3/VERIFICATION.md). Review the alternative and optional own-voice script. No reach or customer-validation result is claimed.
+
+Earlier narration follow-up: the user found the silent demo unclear. That version is marketing/assets/linkedin-demo-voiced.mp4: 33.03 seconds with synthetic English narration, clearer opening/audience/purpose and explicit current limits. [Voice evidence/reproduction](./marketing/linkedin/VOICED.md) records full decode, one AAC audio track, non-silent levels and browser playback. The original silent cut remains available. No LinkedIn post, private Site change or CLI change occurred.
 
 LinkedIn follow-up: the user requested a post-ready demo. [MP4 verification](./marketing/linkedin/VERIFICATION.md) records the new 24.8-second, 1080x1350 H.264 MP4 with large on-screen text, actual browser playback and full decode checks. The export, thumbnail, optional SRT and [copy-ready post](./marketing/linkedin/POST.md) are included in the same launch-kit branch/PR. Nothing was posted to LinkedIn and the private Site was not changed.
 
