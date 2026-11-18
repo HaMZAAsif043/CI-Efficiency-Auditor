@@ -10,6 +10,7 @@ When a feature is implemented, create a subdirectory such as `F2/`, then a dated
 |---|---|---|
 | F1 | [2026-11-17 verification](./F1/VERIFICATION.md) | Verified locally on Windows; ready for review |
 | F2 | [2026-11-17 verification](./F2/VERIFICATION.md) | 35 tests, packed install and independent public API checks; partial live coverage |
+| M3 | [2026-11-18 demo verification](./M3/VERIFICATION.md) | Actual CLI recording and plain copy; draft PR #3, no social posting |
 | F0, F3-F6 | None | Not implemented/validated |
 | Planning package | [2026-11-16 check](./planning-2026-11-16.md) | Local document structure checked; no application proof |
 
