@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-18T12:35:28.418Z",
+  "duration": 16.866667,
+  "width": 1440,
+  "height": 1080,
+  "codec": "H.264",
+  "hasSyntheticVoice": false,
+  "hasAudio": false,
+  "bytes": 325092,
+  "sha256": "977e3ef8ad1036baf78425d6a2eb05e7abe90c68956532b4638142eb6aab62f7",
+  "fullDecodeExit": 0,
+  "browserPlayback": true,
+  "actualRunMilliseconds": 7449,
+  "exitCode": 3,
+  "kind": "actual CLI execution displayed through a local recording wrapper; unsped",
+  "posted": false
+}

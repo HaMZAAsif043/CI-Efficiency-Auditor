@@ -1,0 +1,164 @@
+{
+  "startedAt": "2026-11-18T12:32:32.422Z",
+  "durationMilliseconds": 7449,
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "dist/cli/main.js",
+    "collect",
+    "--repo",
+    "cli/cli",
+    "--days",
+    "7",
+    "--max-runs",
+    "1",
+    "--max-requests",
+    "8",
+    "--no-cache",
+    "--anonymous",
+    "--out",
+    ".cache/straight-demo/snapshot.json"
+  ],
+  "exitCode": 3,
+  "chunks": [
+    {
+      "milliseconds": 7431,
+      "stream": "stdout",
+      "text": "Partial snapshot: 1 runs, 1 attempts, 1 jobs, 4 requests.\n"
+    },
+    {
+      "milliseconds": 7431,
+      "stream": "stderr",
+      "text": "Incomplete coverage: provider_search_cap, run_limit.\n"
+    }
+  ],
+  "snapshot": {
+    "schemaVersion": 1,
+    "collectorVersion": "0.1.0",
+    "collectedAt": "2026-11-18T12:32:39.844Z",
+    "repository": "cli/cli",
+    "apiVersion": "2026-03-10",
+    "window": {
+      "from": "2026-11-11T12:32:33.753Z",
+      "to": "2026-11-18T12:32:33.753Z"
+    },
+    "coverage": {
+      "complete": false,
+      "reasons": [
+        "provider_search_cap",
+        "run_limit"
+      ],
+      "requestCount": 4,
+      "maxRequests": 8,
+      "maxRuns": 1,
+      "returnedRunCount": 1,
+      "cache": {
+        "hits": 0,
+        "misses": 0,
+        "oldestEntryAt": null
+      }
+    },
+    "runs": [
+      {
+        "id": 44303147443,
+        "workflowId": 389529352,
+        "name": "Dependabot PR Triage Scheduler",
+        "sha": "e1219499a578b69e3437adaa31cd60614e23c802",
+        "branch": "trunk",
+        "event": "schedule",
+        "status": "completed",
+        "conclusion": "success",
+        "createdAt": "2026-11-18T12:21:31Z",
+        "startedAt": "2026-11-18T12:21:31Z",
+        "updatedAt": "2026-11-18T12:21:43Z",
+        "attempt": 1,
+        "url": "https://github.com/cli/cli/actions/runs/44303147443"
+      }
+    ],
+    "attempts": [
+      {
+        "runId": 44303147443,
+        "number": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-11-18T12:21:31Z",
+        "updatedAt": "2026-11-18T12:21:43Z"
+      }
+    ],
+    "jobs": [
+      {
+        "id": 134797759179,
+        "runId": 44303147443,
+        "attempt": 1,
+        "name": "dispatch",
+        "labels": [
+          "ubuntu-latest"
+        ],
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-11-18T12:21:35Z",
+        "completedAt": "2026-11-18T12:21:42Z",
+        "url": "https://github.com/cli/cli/actions/runs/44303147443/job/134797759179",
+        "steps": [
+          {
+            "number": 1,
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "startedAt": "2026-11-18T12:21:36Z",
+            "completedAt": "2026-11-18T12:21:36Z"
+          },
+          {
+            "number": 2,
+            "name": "Check out repository",
+            "status": "completed",
+            "conclusion": "success",
+            "startedAt": "2026-11-18T12:21:36Z",
+            "completedAt": "2026-11-18T12:21:39Z"
+          },
+          {
+            "number": 3,
+            "name": "Compute Dependabot triage work list",
+            "status": "completed",
+            "conclusion": "success",
+            "startedAt": "2026-11-18T12:21:39Z",
+            "completedAt": "2026-11-18T12:21:40Z"
+          },
+          {
+            "number": 4,
+            "name": "Dispatch Dependabot triage",
+            "status": "completed",
+            "conclusion": "skipped",
+            "startedAt": "2026-11-18T12:21:40Z",
+            "completedAt": "2026-11-18T12:21:40Z"
+          },
+          {
+            "number": 8,
+            "name": "Post Check out repository",
+            "status": "completed",
+            "conclusion": "success",
+            "startedAt": "2026-11-18T12:21:40Z",
+            "completedAt": "2026-11-18T12:21:40Z"
+          },
+          {
+            "number": 9,
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "startedAt": "2026-11-18T12:21:40Z",
+            "completedAt": "2026-11-18T12:21:40Z"
+          }
+        ]
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "provider_search_cap",
+        "severity": "incomplete"
+      },
+      {
+        "code": "run_limit",
+        "severity": "incomplete"
+      }
+    ]
+  }
+}
