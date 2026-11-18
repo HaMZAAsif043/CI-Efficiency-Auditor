@@ -31,7 +31,7 @@ Collection uses GET requests only, never source/log endpoints. Without `--anonym
 
 ## Demo and launch materials
 
-[Landing page source](./marketing/site/index.html), [landscape demo](./marketing/site/demo-landscape.webm), [portrait demo](./marketing/site/demo-portrait.webm), and [launch copy](./marketing/LAUNCH.md) are included. The videos replay saved public evidence; they are not live executions. [Verified private website preview](https://ci-efficiency-auditor.dancingoats.chatgpt.site) (owner access). Analysis and reports remain roadmap work.
+[Public landing page](https://hamzaasif043.github.io/CI-Efficiency-Auditor/) · [Narrated demo](./marketing/site/demo-narrated.mp4) · [Publishing guide](./marketing/PAGES.md). [Landing page source](./marketing/site/index.html), [landscape demo](./marketing/site/demo-landscape.webm), [portrait demo](./marketing/site/demo-portrait.webm), and [launch copy](./marketing/LAUNCH.md) are included. The videos replay saved public evidence; they are not live executions. Analysis and reports remain roadmap work.
 
 ## Project guides
 

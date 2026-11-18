@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "b29e60901ba8bfd267b15ae0c4021b1642c50a3c",
+  "files": {
+    "index.html": "adefeb13260e2c4a431c03ac6b25e566b545201f3e80405d8d332417f9f92241",
+    "style.css": "78b72bf0b5b28cce7d59b24c6a20bdb1fbf1b46c416ba2feae97ccdf92fe1e77",
+    "app.js": "34a8ecfcc26b5344741a90e8ffe1069b54d19d9cdbbf41472b90f2de8fc9d230",
+    "sample-complete.json": "9943caa8daa65fa7033851b1e519e7bcc5c35a794f3150da5b513b04d930c834",
+    "sample-partial.json": "4f3f2b1f9061973e5ccea5ea3d1cfcbf06d29e16d759867a97a304e3c0ee8e3f",
+    "social-preview.png": "cb08cb7d3b36013386c1021463fef5cefba6caa93c08d7920092b40f5babdac7",
+    "demo-landscape.webm": "dc9b17ddfce972c500f956487783b3e3be0d61155b38928d775641ebcc8aa36c",
+    "demo-portrait.webm": "3a43f792913b49f29d85c5ad4c4ec2134fc8edf9212282fb57921a9f1963b13c",
+    "demo-poster.png": "ebc902f332478dcf11f15b365692dce939ad83ea389b1680f656fdf265720ac2",
+    "demo-captions.vtt": "9a4bac24ec079da411b490c676a033cffd40f3f1359be15a5bab31c75e6bd338",
+    "demo-narrated.mp4": "24cf02294b56978ae7c7cdd13aaa6dd3eaf0b846604730fb2cc62f76d7100205",
+    "demo-narrated.png": "493f95b55845dde054c9ae7239eeed2917c7cda06ed031310dcece70bd71d735",
+    "demo-narrated.vtt": "95e03b320af3e66925959fe706022ca613a6e775cdaa67cb0aaf9263195c2432"
+  }
+}

@@ -8,6 +8,8 @@ The original request created this planning package. On 2026-11-17 the user autho
 
 ## Before work
 
+Pages publication update (2026-11-18): the user explicitly authorized configuring public GitHub Pages. The landing page is served from gh-pages at https://hamzaasif043.github.io/CI-Efficiency-Auditor/ . Use marketing/PAGES.md and the curated publisher for requested website updates; retain task branches and actual deployment verification. The separate Sites preview remains private. This does not authorize npm publication or unrelated application deployment.
+
 Publication update (2026-11-17): the user explicitly authorized origin `https://github.com/HaMZAAsif043/CI-Efficiency-Auditor.git` and pushing the completed project to main. That initial push succeeded. This supersedes historical no-remote assumptions; it does not authorize npm publication or deployment. Use task branches and draft PRs for future implementation unless directed otherwise.
 
 1. Read README, HANDOFF, ROADMAP, the chosen feature card, ARCHITECTURE, and VERIFICATION.

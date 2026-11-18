@@ -1,6 +1,14 @@
 ﻿# Current handoff
 
-Updated: 2026-11-17 (Asia/Karachi).
+Updated: 2026-11-18 (Asia/Karachi).
+
+## Latest delivery — public GitHub Pages
+
+The user requested Pages configuration. The public site is live at https://hamzaasif043.github.io/CI-Efficiency-Auditor/ . Pages source is gh-pages, root, legacy branch build with HTTPS enforced. Published commit: 3b3a43431286069862dfc874638aaee1b878d41d, from website source b29e60901ba8bfd267b15ae0c4021b1642c50a3c. [M2 evidence](./evidence/M2/VERIFICATION.md) records the successful build, 13 exact live asset hashes, complete/partial replay, copy/download, narrated video/audio and desktop/mobile checks.
+
+Configuration work is on chore/github-pages, based on refreshed main ef0383c (the user had merged PR #1 before this task). [Publishing guide](./marketing/PAGES.md) and marketing/scripts/publish-pages.mjs support future explicitly requested updates without force pushing. The publisher stages only website assets; the CLI is not served as website content. The original private Sites preview is unchanged. No npm release or social posting occurred. Next product feature remains F3.
+
+Source-review publication: an initial configuration-branch push failed with HTTP 408; the website's gh-pages push and deployment had already succeeded. A bounded source retry follows. If unavailable, use the [prepared PR description](./work-items/M2-PR.md), preserve the committed local branch and push it normally when connectivity returns. Do not force push or assume a source PR exists from the successful website deployment alone.
 
 ## Latest delivery — launch kit
 
@@ -12,7 +20,7 @@ The user's request for a landing page/demo videos is implemented on `feat/launch
 
 The Sites landing page was deployed successfully at https://ci-efficiency-auditor.dancingoats.chatgpt.site with owner-private access preserved. Its source is separately managed in the sibling ci-auditor-site checkout (project appgprj_6afbf436c5fc819198c290bde0d5f3dd, source commit 9c205f0c7b42a79961c59e2f5e21b6ee1bf72006). Static files/assets are mirrored under marketing/site/ for GitHub review. Do not copy Site Git metadata, credentials or transient files into this repository.
 
-Next: review the launch PR and preview. Public Site access requires the user to request that audience change. Future product implementation still starts with F3 on a separate task branch. CLI behavior/dependencies are unchanged by this launch work.
+The launch PR was merged before the Pages task. Public hosting now uses GitHub Pages; the separate Sites preview remains private. Future product implementation still starts with F3 on a separate task branch. CLI behavior/dependencies are unchanged by this launch work.
 
 Launch publication: commit `431c35b7ff5d8f5339136dcb4850bfb2bec0e982` was pushed and verified against GitHub. [Draft PR #1](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor/pull/1) is open and unmerged; this handoff update follows separately. An initial large upload stalled; a bounded HTTP/1.1 retry succeeded. The owned local preview server was stopped after checks; use the deployed private URL or restart the documented local server. No hosted CLI CI result or social reach is claimed.
 
