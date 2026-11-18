@@ -8,7 +8,7 @@ The user requested Pages configuration. The public site is live at https://hamza
 
 Configuration work is on chore/github-pages, based on refreshed main ef0383c (the user had merged PR #1 before this task). [Publishing guide](./marketing/PAGES.md) and marketing/scripts/publish-pages.mjs support future explicitly requested updates without force pushing. The publisher stages only website assets; the CLI is not served as website content. The original private Sites preview is unchanged. No npm release or social posting occurred. Next product feature remains F3.
 
-Source-review publication: an initial configuration-branch push failed with HTTP 408; the website's gh-pages push and deployment had already succeeded. A bounded source retry follows. If unavailable, use the [prepared PR description](./work-items/M2-PR.md), preserve the committed local branch and push it normally when connectivity returns. Do not force push or assume a source PR exists from the successful website deployment alone.
+Source-review publication: the initial configuration-branch push failed with HTTP 408; a bounded retry succeeded and [draft PR #2](https://github.com/HaMZAAsif043/CI-Efficiency-Auditor/pull/2) is open. Source/evidence commit 3ce04eee3e81aca21c622ebf0e48f30d6520b35e was pushed; this PR-link/status update follows separately. The website was already live independently. No force push or merge occurred during this task.
 
 ## Latest delivery — launch kit
 
